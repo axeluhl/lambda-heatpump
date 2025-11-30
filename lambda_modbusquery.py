@@ -36,8 +36,13 @@ class lambda_modbusquery:
         self.Adr.append([103, "General E-Manager Actual power consumption", "S16", 0])
         self.Adr.append([104, "General E-Manager Power consumption setpoint", "S16", 0])
         # ------------------- Heat Pump ------------------
+        self.Adr.append([1000, "Heat Pump Error state", "S16", 0])
+        self.Adr.append([1001, "Heat Pump Error number", "S16", 0])
         self.Adr.append([1004, "Heat Pump T-flow", "S16", 0])
         self.Adr.append([1005, "Heat Pump T-return", "S16", 0])
+        self.Adr.append([1006, "Heat Pump Volume sink", "S16", 0])
+        self.Adr.append([1007, "Heat Pump EQin", "S16", 0])
+        self.Adr.append([1008, "Heat Pump EQout", "S16", 0])
         # --------------------- Boiler -------------------
         # --------------------- Buffer -------------------
         # --------------------- Solar --------------------
