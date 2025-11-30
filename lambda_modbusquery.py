@@ -57,7 +57,17 @@ class lambda_modbusquery:
         self.Adr.append([1020, "Heat Pump Statistic VdA E since last reset", "S32", 0])
         self.Adr.append([1022, "Heat Pump Statistic VdA Q since last reset", "S32", 0])
         # --------------------- Boiler -------------------
+        self.Adr.append([2000, "Boiler Error number", "S16", 0])
+        self.Adr.append([2001, "Boiler Operating state", "U16_1", 0])
+        self.Adr.append([2002, "Boiler Actual high temperature", "S16", 0])
+        self.Adr.append([2003, "Boiler Actual low temperature", "S16", 0])
+        self.Adr.append([2050, "Boiler Actual Maximum boiler temperature", "S16", 0])
         # --------------------- Buffer -------------------
+        self.Adr.append([3000, "Buffer Error number", "S16", 0])
+        self.Adr.append([3001, "Buffer Operating state", "U16_1", 0])
+        self.Adr.append([3002, "Buffer Actual high temperature", "S16", 0])
+        self.Adr.append([3003, "Buffer Actual low temperature", "S16", 0])
+        self.Adr.append([3050, "Buffer Maximum boiler temperature", "S16", 0])
         # --------------------- Solar --------------------
         # --------------- Heating Circuit ----------------
       
