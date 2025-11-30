@@ -43,6 +43,19 @@ class lambda_modbusquery:
         self.Adr.append([1006, "Heat Pump Volume sink", "S16", 0])
         self.Adr.append([1007, "Heat Pump EQin", "S16", 0])
         self.Adr.append([1008, "Heat Pump EQout", "S16", 0])
+        self.Adr.append([1009, "Heat Pump Volume source", "S16", 0])
+        self.Adr.append([1010, "Heat Pump Compressor rating", "U16_1", 0])
+        self.Adr.append([1011, "Heat Pump Qp heating", "S16", 0])
+        self.Adr.append([1012, "Heat Pump FI power consumption", "S16", 0])
+        self.Adr.append([1013, "Heat Pump COP", "S16", 0])
+        #self.Adr.append([1014, "Heat Pump Modbus request release password", "U16_1", 0])
+        #self.Adr.append([1015, "Heat Pump Request type", "S16", 0])
+        self.Adr.append([1016, "Heat Pump Request flow line temperature", "S16", 0])
+        self.Adr.append([1017, "Heat Pump Request return line temperature", "S16", 0])
+        self.Adr.append([1018, "Heat Pump Request heat sink temperature difference", "S16", 0])
+        self.Adr.append([1019, "Heat Pump Request Relais state for 2nd heating stage", "S16", 0])
+        self.Adr.append([1020, "Heat Pump Statistic VdA E since last reset", "S32", 0])
+        self.Adr.append([1022, "Heat Pump Statistic VdA Q since last reset", "S32", 0])
         # --------------------- Boiler -------------------
         # --------------------- Buffer -------------------
         # --------------------- Solar --------------------
@@ -108,7 +121,13 @@ class lambda_modbusquery:
         r1=self.client.read_holding_registers(myadr_dec,1,unit=1)
         S16register = BinaryPayloadDecoder.fromRegisters(r1.registers, byteorder=Endian.Big, wordorder=Endian.Little)
         result_S16register = S16register.decode_16bit_int()
-        return(result_S16register)
+    #-----------------------------------------
+    # Routine to read a S32 from one address with 2 registers 
+    def ReadS32(self,myadr_dec):
+        r1=self.client.read_holding_registers(myadr_dec,2,unit=1)
+        S32register = BinaryPayloadDecoder.fromRegisters(r1.registers, byteorder=Endian.Big, wordorder=Endian.Little)
+        result_S32register = S32register.decode_32bit_int()
+        return(result_S32register)
         
     try:
         def run(self):
@@ -133,9 +152,10 @@ class lambda_modbusquery:
                     adr[3] = self.ReadU32(adr[0])
                 elif adr[2] == "R32":
                     adr[3] = self.ReadR32(adr[0])
-                    print ("Read an R32 for "+adr[1]+": "+str(adr[3]))
                 elif adr[2] == "S16":
                     adr[3] = self.ReadS16(adr[0])
+                elif adr[2] == "S32":
+                    adr[3] = self.ReadS32(adr[0])
                 else:
                   print ("Format "+adr[2]+" unknown")
                 self.LambdaRegister.append(adr)
