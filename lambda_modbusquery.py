@@ -142,6 +142,7 @@ class lambda_modbusquery:
         r1=self.client.read_holding_registers(myadr_dec,1,unit=1)
         S16register = BinaryPayloadDecoder.fromRegisters(r1.registers, byteorder=Endian.Big, wordorder=Endian.Little)
         result_S16register = S16register.decode_16bit_int()
+        return(result_S16register)
     #-----------------------------------------
     # Routine to read a S32 from one address with 2 registers 
     def ReadS32(self,myadr_dec):

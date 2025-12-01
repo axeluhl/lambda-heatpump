@@ -23,6 +23,7 @@ else:
     # flowline_temperature = struct.unpack('>h', struct.pack('>HH', result.registers[0], result.registers[1]))[0] / 100.0
     # print("Vorlauftemperatur: "+flowline_temperature+"°C")
     print(str(result.registers))
+    print(result.registers[0])
 
 # Verbindung schließen
 client.close()
