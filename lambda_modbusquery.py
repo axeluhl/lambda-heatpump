@@ -200,7 +200,7 @@ if __name__ == "__main__":
                       help='The Modbus port of your heat pump; defaults to 502')
   my_parser.add_argument('--influx', default='klo.axeluhl.de',
                       help='The host name or IP address where your InfluxDB database for storing your heat pump values is running; defaults to "klo.axeluhl.de"')
-  my_parser.add_argument('--db', default='lambda',
+  my_parser.add_argument('--db', default='kostal',
                       help='The InfluxDB database name for storing your heat pump values; defaults to "lambda"')
   my_parser.add_argument('repetitions', nargs='?', default='1',
                       help='The number of times to poll the Modbus values; defaults to 1')
