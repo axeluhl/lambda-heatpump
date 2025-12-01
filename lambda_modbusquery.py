@@ -253,13 +253,13 @@ if __name__ == "__main__":
     #influx_json_body[0]["fields"]['PV production'] = LeftSidePowerGeneration
     #influx_json_body[0]["fields"]['Battery Charge'] = BatteryCharge
     print ("The data is: ", influx_json_body)
-    #influx_client = InfluxDBClient(host=args['influx'], database=args['db'])
-    #influx_client.create_database(args['db'])
-    #try:
-        #if not influx_client.write_points(influx_json_body, time_precision='s'):
-            #print ("Some problem (but no exception) inserting data into InfluxDB")
-    #except Exception as ex:
-        #print ("Problem inserting into InfluxDB:", ex)
+    influx_client = InfluxDBClient(host=args['influx'], database=args['db'])
+    influx_client.create_database(args['db'])
+    try:
+        if not influx_client.write_points(influx_json_body, time_precision='s'):
+            print ("Some problem (but no exception) inserting data into InfluxDB")
+    except Exception as ex:
+        print ("Problem inserting into InfluxDB:", ex)
     waitTimeInSeconds=start+intervalInSeconds-time.time()
     if waitTimeInSeconds > 0:
         sleep(waitTimeInSeconds)
