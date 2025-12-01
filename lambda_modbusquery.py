@@ -38,6 +38,8 @@ class lambda_modbusquery:
         # ------------------- Heat Pump ------------------
         self.Adr.append([1000, "Heat Pump Error state", "S16", 0])
         self.Adr.append([1001, "Heat Pump Error number", "S16", 0])
+        self.Adr.append([1002, "Heat Pump State", "U16_1", 0])
+        self.Adr.append([1003, "Heat Pump Operating state", "U16_1", 0])
         self.Adr.append([1004, "Heat Pump T-flow", "S16", 0])
         self.Adr.append([1005, "Heat Pump T-return", "S16", 0])
         self.Adr.append([1006, "Heat Pump Volume sink", "S16", 0])
