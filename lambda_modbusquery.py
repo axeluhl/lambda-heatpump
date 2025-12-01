@@ -67,7 +67,7 @@ class lambda_modbusquery:
         self.Adr.append([3001, "Buffer Operating state", "U16_1", 0])
         self.Adr.append([3002, "Buffer Actual high temperature", "S16", 0])
         self.Adr.append([3003, "Buffer Actual low temperature", "S16", 0])
-        self.Adr.append([3050, "Buffer Maximum boiler temperature", "S16", 0])
+        self.Adr.append([3050, "Buffer Maximum buffer temperature", "S16", 0])
         # --------------------- Solar --------------------
         #self.Adr.append([4000, "Solar Error number", "S16", 0])
         #self.Adr.append([4001, "Solar Operating state", "U16_1", 0])
