@@ -74,15 +74,15 @@ class lambda_modbusquery:
         #self.Adr.append([4000, "Solar Error number", "S16", 0])
         #self.Adr.append([4001, "Solar Operating state", "U16_1", 0])
         # --------------- Heating Circuit ----------------
-        self.Adr.append([5000, "Heating curcuit Error number", "S16", 0])
-        self.Adr.append([5001, "Heating curcuit Operating state", "U16_1", 0])
-        self.Adr.append([5002, "Heating curcuit Flow line temperature", "S16", 0])
-        self.Adr.append([5004, "Heating curcuit Return line temperature", "S16", 0])
-        self.Adr.append([5005, "Heating curcuit Setpoint flow line temperature", "S16", 0])
-        self.Adr.append([5006, "Heating curcuit Operating mode", "S16", 0])
-        self.Adr.append([5050, "Heating curcuit Offset flow line temperature setpoint", "S16", 0])
-        self.Adr.append([5051, "Heating curcuit Setpoint room heating temperature", "S16", 0])
-        self.Adr.append([5052, "Heating curcuit Setpoint room cooling temperature", "S16", 0])
+        self.Adr.append([5000, "Heating circuit Error number", "S16", 0])
+        self.Adr.append([5001, "Heating circuit Operating state", "U16_1", 0])
+        self.Adr.append([5002, "Heating circuit Flow line temperature", "S16", 0])
+        self.Adr.append([5004, "Heating circuit Return line temperature", "S16", 0])
+        self.Adr.append([5005, "Heating circuit Setpoint flow line temperature", "S16", 0])
+        self.Adr.append([5006, "Heating circuit Operating mode", "S16", 0])
+        self.Adr.append([5050, "Heating circuit Offset flow line temperature setpoint", "S16", 0])
+        self.Adr.append([5051, "Heating circuit Setpoint room heating temperature", "S16", 0])
+        self.Adr.append([5052, "Heating circuit Setpoint room cooling temperature", "S16", 0])
       
     #-----------------------------------------
     # Routine to read a string from one address with n registers 
